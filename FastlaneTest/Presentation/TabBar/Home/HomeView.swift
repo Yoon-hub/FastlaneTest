@@ -32,12 +32,21 @@ final class HomeView: BaseView {
         $0.backgroundColor = .fastlanePink
     }
     
-    let tableView = UITableView().then {
-        $0.backgroundColor = .lightGray
-    }
+    let collectionView = {
+        let layout =  UICollectionViewFlowLayout()
+        let spacing : CGFloat = 4
+        let width = UIScreen.main.bounds.width
+        layout.itemSize = CGSize(width: width, height: 40)
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.minimumLineSpacing = spacing
+        layout.minimumInteritemSpacing = spacing
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        return view
+    }()
     
     override func configure() {
-        [imageView, textField, searchButton, underLine, tableView].forEach { self.addSubview($0) }
+        [imageView, textField, searchButton, underLine, collectionView].forEach { self.addSubview($0) }
     }
     
     override func setConstraints() {
@@ -66,7 +75,7 @@ final class HomeView: BaseView {
             $0.trailing.equalTo(self.safeAreaLayoutGuide).inset(8)
         }
         
-        tableView.snp.makeConstraints {
+        collectionView.snp.makeConstraints {
             $0.bottom.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
             $0.top.equalTo(underLine.snp.bottom).offset(2)
         }
