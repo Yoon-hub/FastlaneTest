@@ -32,8 +32,12 @@ final class HomeView: BaseView {
         $0.backgroundColor = .fastlanePink
     }
     
+    let tableView = UITableView().then {
+        $0.backgroundColor = .lightGray
+    }
+    
     override func configure() {
-        [imageView, textField, searchButton, underLine].forEach { self.addSubview($0) }
+        [imageView, textField, searchButton, underLine, tableView].forEach { self.addSubview($0) }
     }
     
     override func setConstraints() {
@@ -60,6 +64,11 @@ final class HomeView: BaseView {
             $0.top.equalTo(textField.snp.bottom).offset(8)
             $0.leading.equalTo(imageView.snp.trailing).offset(8)
             $0.trailing.equalTo(self.safeAreaLayoutGuide).inset(8)
+        }
+        
+        tableView.snp.makeConstraints {
+            $0.bottom.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
+            $0.top.equalTo(underLine.snp.bottom).offset(2)
         }
     }
 

@@ -24,6 +24,11 @@
 		677B6E4129828E6800B3D8E8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 677B6E4029828E6800B3D8E8 /* .swiftlint.yml */; };
 		677B6E442982920300B3D8E8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 677B6E432982920300B3D8E8 /* SnapKit */; };
 		677B6E472982920E00B3D8E8 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 677B6E462982920E00B3D8E8 /* Then */; };
+		677B6E4A2982CE6500B3D8E8 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B6E492982CE6500B3D8E8 /* APIKey.swift */; };
+		677B6E4C2982CF7D00B3D8E8 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B6E4B2982CF7D00B3D8E8 /* APIManager.swift */; };
+		677B6E4E2982D18B00B3D8E8 /* YsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B6E4D2982D18B00B3D8E8 /* YsData.swift */; };
+		677B6E522982D24300B3D8E8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B6E512982D24300B3D8E8 /* HomeViewModel.swift */; };
+		677B6E542982D35800B3D8E8 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B6E532982D35800B3D8E8 /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,11 @@
 		677B6E38298280E700B3D8E8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		677B6E3B2982813600B3D8E8 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		677B6E4029828E6800B3D8E8 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		677B6E492982CE6500B3D8E8 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		677B6E4B2982CF7D00B3D8E8 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		677B6E4D2982D18B00B3D8E8 /* YsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YsData.swift; sourceTree = "<group>"; };
+		677B6E512982D24300B3D8E8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		677B6E532982D35800B3D8E8 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +89,7 @@
 		677B6E0B2982248D00B3D8E8 /* FastlaneTest */ = {
 			isa = PBXGroup;
 			children = (
+				677B6E482982CE4B00B3D8E8 /* API */,
 				677B6E33298235AE00B3D8E8 /* Common */,
 				677B6E2229822C5E00B3D8E8 /* Presentation */,
 				677B6E20298224CF00B3D8E8 /* Application */,
@@ -141,6 +152,7 @@
 			children = (
 				677B6E3129822EA000B3D8E8 /* HomeViewController.swift */,
 				677B6E38298280E700B3D8E8 /* HomeView.swift */,
+				677B6E502982D22C00B3D8E8 /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -168,6 +180,33 @@
 				677B6E3B2982813600B3D8E8 /* BaseView.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		677B6E482982CE4B00B3D8E8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				677B6E492982CE6500B3D8E8 /* APIKey.swift */,
+				677B6E4B2982CF7D00B3D8E8 /* APIManager.swift */,
+				677B6E532982D35800B3D8E8 /* APIError.swift */,
+				677B6E4F2982D18F00B3D8E8 /* Modle */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		677B6E4F2982D18F00B3D8E8 /* Modle */ = {
+			isa = PBXGroup;
+			children = (
+				677B6E4D2982D18B00B3D8E8 /* YsData.swift */,
+			);
+			path = Modle;
+			sourceTree = "<group>";
+		};
+		677B6E502982D22C00B3D8E8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				677B6E512982D24300B3D8E8 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,11 +317,16 @@
 				677B6E2F29822DC900B3D8E8 /* MyPageViewController.swift in Sources */,
 				677B6E39298280E700B3D8E8 /* HomeView.swift in Sources */,
 				677B6E3229822EA000B3D8E8 /* HomeViewController.swift in Sources */,
+				677B6E4E2982D18B00B3D8E8 /* YsData.swift in Sources */,
 				677B6E2D29822DBC00B3D8E8 /* ReviewViewController.swift in Sources */,
 				677B6E2529822CA200B3D8E8 /* TabBarController.swift in Sources */,
 				677B6E0F2982248D00B3D8E8 /* SceneDelegate.swift in Sources */,
 				677B6E2929822D9C00B3D8E8 /* SkinViewController.swift in Sources */,
 				677B6E3C2982813600B3D8E8 /* BaseView.swift in Sources */,
+				677B6E4C2982CF7D00B3D8E8 /* APIManager.swift in Sources */,
+				677B6E4A2982CE6500B3D8E8 /* APIKey.swift in Sources */,
+				677B6E542982D35800B3D8E8 /* APIError.swift in Sources */,
+				677B6E522982D24300B3D8E8 /* HomeViewModel.swift in Sources */,
 				677B6E36298235C600B3D8E8 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

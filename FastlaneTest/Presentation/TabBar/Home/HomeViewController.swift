@@ -9,7 +9,9 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    let homeView = HomeView()
+    private let homeView = HomeView()
+    
+    private let viewModel = HomeViewModel()
     
     override func loadView() {
         self.view = homeView
@@ -17,8 +19,8 @@ final class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        viewModel.requestYsData()
     }
 
 }
