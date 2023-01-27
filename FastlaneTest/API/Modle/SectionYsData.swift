@@ -10,12 +10,13 @@ import Foundation
 import RxDataSources
 
 enum YsItem {
-    case tvLits(YsTvList)
+    case tvList(YsTvList)
     case recommendEvent(EventList)
     case newEvent(EventList)
 }
 
 struct SectionYsData {
+    var header: String
     var items: [Item]
 }
 

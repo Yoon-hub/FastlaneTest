@@ -24,15 +24,15 @@ final class HomeViewModel {
         }
     }
     
-    func fetchInfo(data: YsData) {
-        let tvList = data.results.ysTvList.map { YsItem.tvLits($0) }
+    private func fetchInfo(data: YsData) {
+        let tvList = data.results.ysTvList.map { YsItem.tvList($0) }
         let newEvent = data.results.newEventList.map { YsItem.newEvent($0) }
         let recommendEvent = data.results.recommendEventList.map { YsItem.recommendEvent($0) }
         
         let section = [
-            SectionYsData(items: tvList),
-            SectionYsData(items: newEvent),
-            SectionYsData(items: recommendEvent)
+            SectionYsData(header: "여신TV 인기영상",items: tvList),
+            SectionYsData(header: "추천 이벤트",items: newEvent),
+            SectionYsData(header: "신규 이벤트", items: recommendEvent)
         ]
         
         ysInfo.onNext(section)

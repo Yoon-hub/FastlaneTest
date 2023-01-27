@@ -33,6 +33,10 @@
 		677B6E5929830A1B00B3D8E8 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 677B6E5829830A1B00B3D8E8 /* RxSwift */; };
 		677B6E5C29830A2F00B3D8E8 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 677B6E5B29830A2F00B3D8E8 /* RxDataSources */; };
 		677B6E5E29830A4A00B3D8E8 /* SectionYsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B6E5D29830A4A00B3D8E8 /* SectionYsData.swift */; };
+		677B6E612983A97500B3D8E8 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B6E602983A97500B3D8E8 /* EventCollectionViewCell.swift */; };
+		677B6E672983D9EA00B3D8E8 /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B6E662983D9EA00B3D8E8 /* ReusableProtocol.swift */; };
+		677B6E692983DBC100B3D8E8 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B6E682983DBC100B3D8E8 /* UIImageView+.swift */; };
+		677B6E6B2983E1D000B3D8E8 /* EventCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B6E6A2983E1D000B3D8E8 /* EventCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,10 @@
 		677B6E512982D24300B3D8E8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		677B6E532982D35800B3D8E8 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		677B6E5D29830A4A00B3D8E8 /* SectionYsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionYsData.swift; sourceTree = "<group>"; };
+		677B6E602983A97500B3D8E8 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		677B6E662983D9EA00B3D8E8 /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
+		677B6E682983DBC100B3D8E8 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		677B6E6A2983E1D000B3D8E8 /* EventCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,7 @@
 				677B6E3129822EA000B3D8E8 /* HomeViewController.swift */,
 				677B6E38298280E700B3D8E8 /* HomeView.swift */,
 				677B6E502982D22C00B3D8E8 /* ViewModel */,
+				677B6E5F2983A8B600B3D8E8 /* HomeCollectionViewCell */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -168,6 +177,7 @@
 		677B6E33298235AE00B3D8E8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				677B6E652983D9D600B3D8E8 /* Protocol */,
 				677B6E3A2982812500B3D8E8 /* Utility */,
 				677B6E34298235B300B3D8E8 /* Extension */,
 			);
@@ -178,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				677B6E35298235C600B3D8E8 /* UIColor+.swift */,
+				677B6E682983DBC100B3D8E8 /* UIImageView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -216,6 +227,23 @@
 				677B6E512982D24300B3D8E8 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		677B6E5F2983A8B600B3D8E8 /* HomeCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				677B6E602983A97500B3D8E8 /* EventCollectionViewCell.swift */,
+				677B6E6A2983E1D000B3D8E8 /* EventCollectionReusableView.swift */,
+			);
+			path = HomeCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		677B6E652983D9D600B3D8E8 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				677B6E662983D9EA00B3D8E8 /* ReusableProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,9 +355,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				677B6E2B29822DA800B3D8E8 /* EventViewController.swift in Sources */,
+				677B6E6B2983E1D000B3D8E8 /* EventCollectionReusableView.swift in Sources */,
 				677B6E0D2982248D00B3D8E8 /* AppDelegate.swift in Sources */,
 				677B6E2F29822DC900B3D8E8 /* MyPageViewController.swift in Sources */,
 				677B6E39298280E700B3D8E8 /* HomeView.swift in Sources */,
+				677B6E692983DBC100B3D8E8 /* UIImageView+.swift in Sources */,
 				677B6E3229822EA000B3D8E8 /* HomeViewController.swift in Sources */,
 				677B6E4E2982D18B00B3D8E8 /* YsData.swift in Sources */,
 				677B6E5E29830A4A00B3D8E8 /* SectionYsData.swift in Sources */,
@@ -339,9 +369,11 @@
 				677B6E2929822D9C00B3D8E8 /* SkinViewController.swift in Sources */,
 				677B6E3C2982813600B3D8E8 /* BaseView.swift in Sources */,
 				677B6E4C2982CF7D00B3D8E8 /* APIManager.swift in Sources */,
+				677B6E612983A97500B3D8E8 /* EventCollectionViewCell.swift in Sources */,
 				677B6E4A2982CE6500B3D8E8 /* APIKey.swift in Sources */,
 				677B6E542982D35800B3D8E8 /* APIError.swift in Sources */,
 				677B6E522982D24300B3D8E8 /* HomeViewModel.swift in Sources */,
+				677B6E672983D9EA00B3D8E8 /* ReusableProtocol.swift in Sources */,
 				677B6E36298235C600B3D8E8 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
