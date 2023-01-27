@@ -18,6 +18,7 @@ final class HomeViewModel {
             switch result {
             case .success(let data):
                 self?.fetchInfo(data: data)
+                print(data)
             case .failure(let failure):
                 print(failure)
             }
@@ -25,12 +26,12 @@ final class HomeViewModel {
     }
     
     private func fetchInfo(data: YsData) {
-        let tvList = data.results.ysTvList.map { YsItem.tvList($0) }
+        let tvList = YsItem.tvList(data.results)
         let newEvent = data.results.newEventList.map { YsItem.newEvent($0) }
         let recommendEvent = data.results.recommendEventList.map { YsItem.recommendEvent($0) }
         
         let section = [
-            SectionYsData(header: "여신TV 인기영상",items: tvList),
+            SectionYsData(header: "여신TV 인기영상",items: [tvList]),
             SectionYsData(header: "추천 이벤트",items: newEvent),
             SectionYsData(header: "신규 이벤트", items: recommendEvent)
         ]

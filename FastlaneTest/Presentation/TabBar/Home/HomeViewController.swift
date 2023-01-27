@@ -28,6 +28,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         setDataSource()
+        collectionViewHeader()
         collectionViewBind()
         viewModel.requestYsData()
     }
@@ -39,11 +40,10 @@ extension HomeViewController {
     
     private func setDataSource() {
         dataSource = RxCollectionViewSectionedReloadDataSource<SectionYsData>(configureCell: { dataSource, collectionView, indexPath, item in
-      
             switch item {
             case .tvList(let tvList):
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventCollectionViewCell.reusable, for: indexPath) as! EventCollectionViewCell
-                cell.bind(item: tvList)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: YsTvCollectionViewCell.reusable, for: indexPath) as! YsTvCollectionViewCell
+                
                 return cell
             case .recommendEvent(let recommendEvent):
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventCollectionViewCell.reusable, for: indexPath) as! EventCollectionViewCell
@@ -63,6 +63,17 @@ extension HomeViewController {
             .disposed(by: disposeBag)
     }
     
-    
+    private func collectionViewHeader() {
+        dataSource.configureSupplementaryView = {(dataSource, collectionView, kind, indexPath) -> UICollectionReusableView in
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: EventCollectionReusableView.reusable, for: indexPath) as! EventCollectionReusableView
+            header.label.text = dataSource.sectionModels[indexPath.section].header
+            return header
+        }
+    }
 
 }
+
+	
+
+
+

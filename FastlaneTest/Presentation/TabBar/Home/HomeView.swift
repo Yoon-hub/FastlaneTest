@@ -36,13 +36,15 @@ final class HomeView: BaseView {
         let layout =  UICollectionViewFlowLayout()
         let spacing : CGFloat = 4
         let width = UIScreen.main.bounds.width
-        layout.itemSize = CGSize(width: width, height: 80)
+        layout.itemSize = CGSize(width: width, height: 120)
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing
+        layout.headerReferenceSize = .init(width: width, height: 50)
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.register(EventCollectionViewCell.self, forCellWithReuseIdentifier: EventCollectionViewCell.reusable)
+        view.register(YsTvCollectionViewCell.self, forCellWithReuseIdentifier: YsTvCollectionViewCell.reusable)
         view.register(EventCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: EventCollectionReusableView.reusable)
         return view
     }()

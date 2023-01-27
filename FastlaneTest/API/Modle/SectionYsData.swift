@@ -10,7 +10,7 @@ import Foundation
 import RxDataSources
 
 enum YsItem {
-    case tvList(YsTvList)
+    case tvList(Results)
     case recommendEvent(EventList)
     case newEvent(EventList)
 }

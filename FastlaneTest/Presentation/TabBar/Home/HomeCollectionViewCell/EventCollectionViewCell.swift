@@ -10,10 +10,13 @@ import UIKit
 import Then
 import SnapKit
 
+import Kingfisher
+
 final class EventCollectionViewCell: UICollectionViewCell {
     
-    let imageView = UIImageView()
-    
+    let imageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         [imageView].forEach { self.addSubview($0) }
@@ -32,14 +35,11 @@ final class EventCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func bind(item: YsTvList) {
-        let url = URL(string: item.tvFullImgURL)
-        imageView.load(url: url!)
-    }
-    
+
     func bind(item2: EventList) {
         let url = URL(string: item2.thumbnailImageURL)
-        imageView.load(url: url!)
+        imageView.kf.setImage(with: url, placeholder: UIImage(named: "image"))
+        //imageView.load(url: url!)
     }
     
     
