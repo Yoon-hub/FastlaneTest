@@ -18,7 +18,7 @@ final class HomeViewModel {
             switch result {
             case .success(let data):
                 self?.fetchInfo(data: data)
-                print(data)
+               // print(data)
             case .failure(let failure):
                 print(failure)
             }
@@ -32,8 +32,8 @@ final class HomeViewModel {
         
         let section = [
             SectionYsData(header: "여신TV 인기영상",items: [tvList]),
-            SectionYsData(header: "추천 이벤트",items: newEvent),
-            SectionYsData(header: "신규 이벤트", items: recommendEvent)
+            SectionYsData(header: "추천이벤트",items: newEvent),
+            SectionYsData(header: "신규이벤트", items: recommendEvent)
         ]
         
         ysInfo.onNext(section)

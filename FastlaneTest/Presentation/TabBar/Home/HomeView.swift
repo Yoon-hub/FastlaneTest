@@ -41,11 +41,12 @@ final class HomeView: BaseView {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing
-        layout.headerReferenceSize = .init(width: width, height: 50)
+        layout.headerReferenceSize = .init(width: width, height: 90)
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.register(EventCollectionViewCell.self, forCellWithReuseIdentifier: EventCollectionViewCell.reusable)
         view.register(YsTvCollectionViewCell.self, forCellWithReuseIdentifier: YsTvCollectionViewCell.reusable)
         view.register(EventCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: EventCollectionReusableView.reusable)
+        view.backgroundColor = .white
         return view
     }()
     
