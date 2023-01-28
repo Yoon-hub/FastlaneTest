@@ -16,6 +16,10 @@ extension UIColor {
         return UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
     }
     
+    static var ysblack: UIColor {
+        return UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
+    }
+    
     static var ysGray2: UIColor {
         return UIColor(red: 239/255, green: 239/255, blue: 239/255, alpha: 1)
     }

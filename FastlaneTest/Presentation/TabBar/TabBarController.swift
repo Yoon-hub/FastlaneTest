@@ -20,6 +20,8 @@ final class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         
+        //let homeNavi = UINavigationController(rootViewController: HomeViewController())
+        
         let homeView = HomeViewController()
         let skinView = SkinViewController()
         let eventView = EventViewController()
@@ -27,6 +29,7 @@ final class TabBarController: UITabBarController {
         let myPageView = MyPageViewController()
         
         setViewControllers([skinView, eventView, homeView, reviewView, myPageView], animated: true)
+        selectedIndex = 2
         
         homeView.tabBarItem = UITabBarItem(title: "홈", image: UIImage(named: TabImage.home.rawValue), tag: 0)
         skinView.tabBarItem = UITabBarItem(title: "피부시술앱", image: UIImage(named: TabImage.skin.rawValue), tag: 0)

@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("set in SceneDelegate")
         } else {
             let window = UIWindow(frame: UIScreen.main.bounds)
-            window.rootViewController = TabBarController()
+            let tabNavi = UINavigationController(rootViewController: TabBarController())
+            window.rootViewController = tabNavi
             self.window = window
             window.makeKeyAndVisible()
         }

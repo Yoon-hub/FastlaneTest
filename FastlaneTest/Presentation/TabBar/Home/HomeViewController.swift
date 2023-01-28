@@ -26,7 +26,6 @@ final class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setDataSource()
         collectionViewHeader()
         collectionViewBind()
@@ -34,6 +33,8 @@ final class HomeViewController: UIViewController {
     }
 
 }
+
+
 
 //MARK: - CollcetionView
 extension HomeViewController {
@@ -49,6 +50,15 @@ extension HomeViewController {
                     cell.bind(item: ysData)
                 }
                 .disposed(by: cell.cellDisposeBag)
+                
+                cell.ysCollcetionView.rx.itemSelected
+                    .withUnretained(self)
+                    .bind { vc, index in
+                        let webView = WebViewController()
+                        webView.url = tvList.ysTvList[index.item].tvVideoURL
+                        vc.transition(webView, transitionStyle: .naviagtion)
+                    }
+                    .disposed(by: cell.cellDisposeBag)
                 
                 return cell
             case .recommendEvent(let recommendEvent):

@@ -21,7 +21,7 @@ final class YsTvCollectionViewCell: UICollectionViewCell {
         let width = UIScreen.main.bounds.width
         layout.itemSize = CGSize(width: width / 2.5 , height: 100)
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 8
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)

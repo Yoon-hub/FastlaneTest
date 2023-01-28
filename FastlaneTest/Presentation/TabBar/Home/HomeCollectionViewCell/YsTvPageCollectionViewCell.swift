@@ -9,19 +9,18 @@ import UIKit
 
 import SnapKit
 import Then
-//import Kingfisher
 
 class YsTvPageCollectionViewCell: UICollectionViewCell {
     
     let imageView = UIImageView().then {
-        $0.layer.cornerRadius = 8
+        $0.layer.cornerRadius = 12
         $0.layer.masksToBounds = true
         $0.contentMode = .scaleToFill
     }
     
     let descriptLabel = UILabel().then {
-        $0.textColor = .black
-        $0.font = .systemFont(ofSize: 12)
+        $0.font = .systemFont(ofSize: 12, weight: .semibold)
+        $0.textColor = .ysblack
     }
     
     override init(frame: CGRect) {
