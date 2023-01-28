@@ -46,6 +46,7 @@ final class HomeView: BaseView {
         view.register(EventCollectionViewCell.self, forCellWithReuseIdentifier: EventCollectionViewCell.reusable)
         view.register(YsTvCollectionViewCell.self, forCellWithReuseIdentifier: YsTvCollectionViewCell.reusable)
         view.register(EventCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: EventCollectionReusableView.reusable)
+        view.register(YsTvCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: YsTvCollectionReusableView.reusable)
         view.backgroundColor = .white
         return view
     }()

@@ -10,7 +10,7 @@ import UIKit
 import Then
 import SnapKit
 
-import Kingfisher
+//import Kingfisher
 
 final class EventCollectionViewCell: UICollectionViewCell {
     //120
@@ -92,9 +92,14 @@ final class EventCollectionViewCell: UICollectionViewCell {
         $0.font = .systemFont(ofSize: 12, weight: .semibold)
     }
     
+    let heartButton = UIButton().then {
+
+        $0.setImage(UIImage(named: "heart"), for: .normal)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        [imageView, underLine, locationLabel, nameLabel, commentLabel, reservationButton, priceLabel, wonLabel, interestLabel, reviewLabel, starLabel, interestNum, reviewNum, starNum].forEach { self.addSubview($0) }
+        [imageView, underLine, locationLabel, nameLabel, commentLabel, reservationButton, priceLabel, wonLabel, interestLabel, reviewLabel, starLabel, interestNum, reviewNum, starNum, heartButton].forEach { self.addSubview($0) }
         configure()
     }
     
@@ -177,14 +182,20 @@ final class EventCollectionViewCell: UICollectionViewCell {
             $0.top.equalTo(interestLabel)
             $0.leading.equalTo(starLabel.snp.trailing).offset(1)
         }
+        
+        heartButton.snp.makeConstraints {
+            $0.centerY.equalTo(self)
+            $0.trailing.equalTo(self).inset(12)
+            $0.width.height.equalTo(20)
+        }
     
     }
     
 
     func bind(item2: EventList) {
         let url = URL(string: item2.thumbnailImageURL)
-        imageView.kf.setImage(with: url, placeholder: UIImage(named: "image"))
-        //imageView.load(url: url!)
+        //imageView.kf.setImage(with: url, placeholder: UIImage(named: "image"))
+        imageView.load(url: url!)
         locationLabel.text = item2.displayName
         nameLabel.text = item2.name
         commentLabel.text = item2.comment

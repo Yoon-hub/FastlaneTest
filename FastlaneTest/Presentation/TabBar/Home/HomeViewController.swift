@@ -43,6 +43,13 @@ extension HomeViewController {
             switch item {
             case .tvList(let tvList):
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: YsTvCollectionViewCell.reusable, for: indexPath) as! YsTvCollectionViewCell
+                let ysData = Observable.of(tvList.ysTvList)
+                ysData.bind(to: cell.ysCollcetionView.rx.items(cellIdentifier: YsTvPageCollectionViewCell.reusable, cellType: YsTvPageCollectionViewCell.self))
+                { index, ysData, cell in
+                    cell.bind(item: ysData)
+                }
+                .disposed(by: cell.cellDisposeBag)
+                
                 return cell
             case .recommendEvent(let recommendEvent):
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventCollectionViewCell.reusable, for: indexPath) as! EventCollectionViewCell
@@ -64,13 +71,20 @@ extension HomeViewController {
     
     private func collectionViewHeader() {
         dataSource.configureSupplementaryView = {(dataSource, collectionView, kind, indexPath) -> UICollectionReusableView in
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: EventCollectionReusableView.reusable, for: indexPath) as! EventCollectionReusableView
-           
-            let text = dataSource.sectionModels[indexPath.section].header
-            let attributeString = NSMutableAttributedString(string: text)
-            attributeString.addAttribute(.foregroundColor, value: UIColor.fastlanePink, range: (text as NSString).range(of: "이벤트"))
-            header.label.attributedText = attributeString
-            return header
+            
+            if indexPath.section == 0 {
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: YsTvCollectionReusableView.reusable, for: indexPath) as! YsTvCollectionReusableView
+                
+                return header
+            } else {
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: EventCollectionReusableView.reusable, for: indexPath) as! EventCollectionReusableView
+                
+                let text = dataSource.sectionModels[indexPath.section].header
+                let attributeString = NSMutableAttributedString(string: text)
+                attributeString.addAttribute(.foregroundColor, value: UIColor.fastlanePink, range: (text as NSString).range(of: "이벤트"))
+                header.label.attributedText = attributeString
+                return header
+            }
         }
     }
 

@@ -7,22 +7,26 @@
 
 import UIKit
 
+import RxSwift
 import SnapKit
 import Then
 
 final class YsTvCollectionViewCell: UICollectionViewCell {
     
+    var cellDisposeBag = DisposeBag()
+    
     let ysCollcetionView = {
         let layout =  UICollectionViewFlowLayout()
         let spacing : CGFloat = 4
         let width = UIScreen.main.bounds.width
-        layout.itemSize = CGSize(width: width / 1.5 , height: 40)
+        layout.itemSize = CGSize(width: width / 2.5 , height: 100)
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.minimumLineSpacing = spacing
-        layout.minimumInteritemSpacing = spacing
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 0)
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 8
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
+        view.register(YsTvPageCollectionViewCell.self, forCellWithReuseIdentifier: YsTvPageCollectionViewCell.reusable)
         return view
     }()
     
@@ -38,6 +42,11 @@ final class YsTvCollectionViewCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        cellDisposeBag = DisposeBag()
     }
     
     
