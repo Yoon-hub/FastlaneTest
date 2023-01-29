@@ -12,6 +12,8 @@ import RxSwift
 final class HomeViewModel {
     
     let ysInfo = PublishSubject<[SectionYsData]>()
+    var newEvent: [EventList]!
+    var recommentEvent: [EventList]!
     
     func requestYsData() {
         APIManager.shared.requestAPI { [weak self] result in
@@ -26,6 +28,9 @@ final class HomeViewModel {
     }
     
     private func fetchInfo(data: YsData) {
+        self.newEvent = data.results.newEventList
+        self.recommentEvent = data.results.recommendEventList
+        
         let tvList = YsItem.tvList(data.results)
         let newEvent = data.results.newEventList.map { YsItem.newEvent($0) }
         let recommendEvent = data.results.recommendEventList.map { YsItem.recommendEvent($0) }

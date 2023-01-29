@@ -42,6 +42,8 @@
 		677B6E7429853F4A00B3D8E8 /* YsTvPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B6E7329853F4A00B3D8E8 /* YsTvPageCollectionViewCell.swift */; };
 		677B6E7D2985832400B3D8E8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B6E7C2985832400B3D8E8 /* WebViewController.swift */; };
 		677B6E7F2985844600B3D8E8 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B6E7E2985844600B3D8E8 /* UIViewController+.swift */; };
+		677B6E82298611C700B3D8E8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B6E81298611C700B3D8E8 /* DetailViewController.swift */; };
+		677B6E84298613E700B3D8E8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B6E83298613E700B3D8E8 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,8 @@
 		677B6E7329853F4A00B3D8E8 /* YsTvPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YsTvPageCollectionViewCell.swift; sourceTree = "<group>"; };
 		677B6E7C2985832400B3D8E8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		677B6E7E2985844600B3D8E8 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		677B6E81298611C700B3D8E8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		677B6E83298613E700B3D8E8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,7 @@
 			children = (
 				677B6E2429822CA200B3D8E8 /* TabBarController.swift */,
 				677B6E3029822E8800B3D8E8 /* Home */,
+				677B6E80298611A500B3D8E8 /* DetailView */,
 				677B6E7B298582CB00B3D8E8 /* WebView */,
 				677B6E2729822D6000B3D8E8 /* NotUse */,
 			);
@@ -267,6 +272,15 @@
 				677B6E7C2985832400B3D8E8 /* WebViewController.swift */,
 			);
 			path = WebView;
+			sourceTree = "<group>";
+		};
+		677B6E80298611A500B3D8E8 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				677B6E81298611C700B3D8E8 /* DetailViewController.swift */,
+				677B6E83298613E700B3D8E8 /* DetailView.swift */,
+			);
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,9 +400,11 @@
 				677B6E692983DBC100B3D8E8 /* UIImageView+.swift in Sources */,
 				677B6E6D2984104C00B3D8E8 /* YsTvCollectionViewCell.swift in Sources */,
 				677B6E3229822EA000B3D8E8 /* HomeViewController.swift in Sources */,
+				677B6E82298611C700B3D8E8 /* DetailViewController.swift in Sources */,
 				677B6E4E2982D18B00B3D8E8 /* YsData.swift in Sources */,
 				677B6E7229852EEB00B3D8E8 /* YsTvCollectionReusableView.swift in Sources */,
 				677B6E5E29830A4A00B3D8E8 /* SectionYsData.swift in Sources */,
+				677B6E84298613E700B3D8E8 /* DetailView.swift in Sources */,
 				677B6E2D29822DBC00B3D8E8 /* ReviewViewController.swift in Sources */,
 				677B6E7D2985832400B3D8E8 /* WebViewController.swift in Sources */,
 				677B6E2529822CA200B3D8E8 /* TabBarController.swift in Sources */,

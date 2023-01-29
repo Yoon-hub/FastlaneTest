@@ -29,6 +29,7 @@ final class HomeViewController: UIViewController {
         setDataSource()
         collectionViewHeader()
         collectionViewBind()
+        collectionViewItemSelected()
         viewModel.requestYsData()
     }
 
@@ -71,6 +72,22 @@ extension HomeViewController {
                 return cell
             }
         })
+    }
+    
+    private func collectionViewItemSelected() {
+        homeView.homeCollectionView.rx.itemSelected
+            .withUnretained(self)
+            .bind {(vc, index) in
+
+                let detailVC = DetailViewController()
+                if index.section == 1 {
+                    detailVC.data = vc.viewModel.newEvent[index.item]
+                } else if index.section == 2 {
+                    detailVC.data = vc.viewModel.recommentEvent[index.item]
+                }
+                vc.transition(detailVC, transitionStyle: .naviagtion)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func collectionViewBind() {
