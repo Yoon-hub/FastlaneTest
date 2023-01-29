@@ -46,5 +46,7 @@ extension DetailViewController {
         detailView.locationLabel.text = data.displayName
         detailView.nameLabel.text = data.name
         detailView.descriptLabel.text = data.comment
+    
+        detailView.pricelabel.text = "\(numberFormat(value: data.price))원"
     }
 }
